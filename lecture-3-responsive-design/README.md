@@ -1,0 +1,3 @@
+# Lecture 3 — Responsive Design
+
+Two versions of the same page, each with a header, a set of cards and a footer. Open them and resize the browser window. [`index.html`](index.html) with [`style.css`](style.css) uses **CSS Grid**: a sidebar next to the content (`grid-template-columns: 200px 1fr`), and cards that fill as many columns as fit (`repeat(auto-fit, minmax(150px, 1fr))`). [`flex.html`](flex.html) with [`flex.css`](flex.css) uses **Flexbox**: a navbar with the logo and links in a row, and cards that wrap onto new lines (`flex-wrap: wrap` and `flex: 1 1 150px`). In both versions a media query (`@media (max-width: 600px)`) changes the layout on small screens: the grid stacks the sidebar on top of the content, and the navbar switches to a column.

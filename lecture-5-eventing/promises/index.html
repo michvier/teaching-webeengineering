@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 5 — Promises</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav><a href="../index.html">← Lecture 5</a></nav>
+  <h1>Lecture 5: Promises</h1>
+  <p>Each example has its own page with the code and a Run button.
+     Try to predict the output before you run it. The output also appears in the browser console (F12).</p>
+  <ol class="examples">
+    <li><a href="01-creating-promises.html">Creating a promise</a><br><span>A promise is a value that arrives <em>later</em>. Here a coin flip either resolves (<code>then</code>) or rejects (<code>catch</code>). Run it a few times.</span></li>
+    <li><a href="02-chaining.html">Chaining</a><br><span>Each <code>.then()</code> passes its return value to the next one. When an error is thrown, the chain skips ahead to <code>.catch()</code>.</span></li>
+    <li><a href="03-microtasks-vs-macrotasks.html">Microtasks vs. macrotasks</a><br><span>Promise callbacks are <strong>microtasks</strong>, <code>setTimeout</code> callbacks are <strong>macrotasks</strong>. When the normal code is done, the browser runs <em>all</em> microtasks first, even new ones added along the way. Only then does it run the next macrotask, even with a delay of 0 ms.</span></li>
+    <li><a href="04-combinators.html">Promise.race and Promise.all</a><br><span><code>race</code> gives you the first promise that finishes. <code>all</code> waits for every promise.</span></li>
+    <li><a href="05-async-await.html">async / await</a><br><span><code>await</code> is a shorter way to write <code>.then()</code>: it waits for the promise and gives you its value. You can only use it inside an <code>async</code> function.</span></li>
+    <li><a href="06-fetch.html">fetch()</a><br><span><code>fetch()</code> returns a promise. Careful: a 404 does <em>not</em> throw an error! Needs an internet connection.</span></li>
+    <li><a href="07-tricky-if-else.html">When if / else becomes tricky</a><br><span>If the data is cached, the callback runs <em>now</em>. Otherwise it runs <em>later</em>. So the same code logs in a different order! Try the fix in the comment. Based on the MDN Microtask guide.</span></li>
+  </ol>
+</body>
+</html>

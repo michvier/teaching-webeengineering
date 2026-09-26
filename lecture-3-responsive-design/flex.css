@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #222;
+}
+
+.site-header,
+.site-footer {
+  padding: 1rem;
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+}
+
+/* Flex navbar: logo and links side by side, wraps on small screens */
+.navbar {
+  display: flex; 
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: #34495e;
+}
+.nav-links li::after {
+  content: " |"; 
+  padding-left: 0.5rem; 
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* Flex card row: wraps to multiple lines instead of overflowing */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  flex: 1 1 150px;
+  background: #3498db;
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Below 600px: stack navbar links and logo vertically */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,56 @@
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #222;
+}
+
+a { color: #0b5cad; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+pre {
+  background: #f6f8fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+pre code.hljs { padding: 0; background: none; }
+
+#output {
+  min-height: 8rem;
+  white-space: pre-wrap;
+  background: #1e1e1e;
+  color: #e6e6e6;
+  border-color: #1e1e1e;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+}
+
+/* Code on the left, output on the right on wide screens */
+.layout {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .layout { grid-template-columns: 3fr 2fr; align-items: start; }
+  .run { position: sticky; top: 1rem; }
+}
+
+/* Overview page */
+ol.examples li { margin: 0.5rem 0; }
+ol.examples span { color: #555; }

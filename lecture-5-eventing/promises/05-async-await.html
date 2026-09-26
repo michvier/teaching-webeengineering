@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promises 5: async / await</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="04-combinators.html">← 4. Promise.race and Promise.all</a>
+    <a href="index.html">All examples</a>
+    <a href="06-fetch.html">6. fetch() →</a>
+  </nav>
+
+  <h1>5. async / await</h1>
+  <p><code>await</code> is a shorter way to write <code>.then()</code>: it waits for the promise and gives you its value. You can only use it inside an <code>async</code> function.</p>
+
+  <div class="layout">
+    <section>
+      <h2>Code</h2>
+      <pre><code id="code" class="language-javascript"></code></pre>
+    </section>
+    <section class="run">
+      <h2>Output</h2>
+      <button id="run" data-example="example5">▶ Run</button>
+      <pre id="output"></pre>
+    </section>
+  </div>
+
+  <!-- The example code: shown above and run by the button -->
+  <script class="example">
+    async function example5() {
+      const promise = Promise.resolve(42);
+
+      // with then
+      promise.then((n) => console.log("then: ", n));
+
+      // with await: same result, reads like normal code
+      const n = await promise;
+      console.log("await:", n);
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="example-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promises 7: When if / else becomes tricky</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="06-fetch.html">← 6. fetch()</a>
+    <a href="index.html">All examples</a>
+    <span></span>
+  </nav>
+
+  <h1>7. When if / else becomes tricky</h1>
+  <p>If the data is cached, the callback runs <em>now</em>. Otherwise it runs <em>later</em>. So the same code logs in a different order! Try the fix in the comment. Based on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide">MDN Microtask guide</a>.</p>
+
+  <div class="layout">
+    <section>
+      <h2>Code</h2>
+      <pre><code id="code" class="language-javascript"></code></pre>
+    </section>
+    <section class="run">
+      <h2>Output</h2>
+      <button id="run" data-example="example7">▶ Run</button>
+      <pre id="output"></pre>
+    </section>
+  </div>
+
+  <!-- The example code: shown above and run by the button -->
+  <script class="example">
+    let cached = null;
+
+    function getData(callback) {
+      if (cached) {
+        callback(cached);  // runs NOW
+        // Fix: queueMicrotask(() => callback(cached));
+      } else {
+        Promise.resolve("data").then((data) => {
+          cached = data;
+          callback(data);  // runs LATER
+        });
+      }
+    }
+
+    function example7() {
+      cached = null;
+
+      console.log("before");
+      getData(() => console.log("got data"));
+      console.log("after");
+
+      setTimeout(() => {
+        console.log("--- again, now cached ---");
+        console.log("before");
+        getData(() => console.log("got data"));
+        console.log("after");
+      }, 100);
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="example-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promises 3: Microtasks vs. macrotasks</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="02-chaining.html">← 2. Chaining</a>
+    <a href="index.html">All examples</a>
+    <a href="04-combinators.html">4. Promise.race and Promise.all →</a>
+  </nav>
+
+  <h1>3. Microtasks vs. macrotasks</h1>
+  <p>Promise callbacks are <strong>microtasks</strong>, <code>setTimeout</code> callbacks are <strong>macrotasks</strong>. When the normal code is done, the browser runs <em>all</em> microtasks first, even new ones added along the way. Only then does it run the next macrotask, even with a delay of 0 ms.</p>
+
+  <div class="layout">
+    <section>
+      <h2>Code</h2>
+      <pre><code id="code" class="language-javascript"></code></pre>
+    </section>
+    <section class="run">
+      <h2>Output</h2>
+      <button id="run" data-example="example3">▶ Run</button>
+      <pre id="output"></pre>
+    </section>
+  </div>
+
+  <!-- The example code: shown above and run by the button -->
+  <script class="example">
+    function example3() {
+      setTimeout(() => console.log("macrotask: setTimeout"), 0);
+
+      Promise.resolve().then(() => {
+        console.log("microtask: promise");
+        queueMicrotask(() => console.log("microtask: queued by a microtask"));
+      });
+
+      console.log("sync: normal code");
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="example-page.js"></script>
+</body>
+</html>
