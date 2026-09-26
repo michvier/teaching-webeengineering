@@ -2,6 +2,8 @@
 
 Promises Code Examples: [`EXAMPLES.md`](promises/EXAMPLES.md)
 
+Run all examples in the browser [here](https://michael.vierhauser.net/teaching-webeengineering/lecture-5-eventing/promises/index.html)
+
 ## Promise examples
 
 The examples are in [`promises/`](promises). Read all of them with code and output in [`EXAMPLES.md`](promises/EXAMPLES.md), or open [`promises/index.html`](promises/index.html) in the browser: each example has its own page with the code, a **Run** button and the output.
