@@ -1,6 +1,6 @@
 # Lecture 5 — Eventing
 
-Open [`index.html`](index.html) in the browser to follow along with the lecture demo.
+Promises Code Examples: [`EXAMPLES.md`](EXAMPLES.md)
 
 ## Promise examples
 
