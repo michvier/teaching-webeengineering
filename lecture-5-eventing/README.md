@@ -1,6 +1,6 @@
 # Lecture 5 — Eventing
 
-Promises Code Examples: [`EXAMPLES.md`](EXAMPLES.md)
+Promises Code Examples: [`EXAMPLES.md`](promises/EXAMPLES.md)
 
 ## Promise examples
 
