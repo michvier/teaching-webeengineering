@@ -10,6 +10,6 @@ Sample repository for the Web Engineering course. Each lecture has its own folde
 | 2 | CSS | [`lecture-2-css/`](lecture-2-css/README.md) |
 | 3 | Responsive Design | [`lecture-3-responsive-design/`](lecture-3-responsive-design/README.md) |
 | 4 | JavaScript Basics | [`lecture-4-javascript-basics/`](lecture-4-javascript-basics/README.md) |
-| 5 | Eventing | [`lecture-5-eventing/`](lecture-5-eventing/README.md) (with [promise examples](lecture-5-eventing/README.md#promise-examples)) |
+| 5 | Eventing | [`lecture-5-eventing/`](lecture-5-eventing/README.md) |
 
 Each folder contains an `index.html` you can open directly in the browser to follow along.

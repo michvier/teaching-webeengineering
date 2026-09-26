@@ -1,6 +1,7 @@
 # Lecture 5 — Promise Examples
 
-All examples at a glance. To run them, open [`index.html`](index.html) in the browser: each example has its own page with a **Run** button.
+
+In the browser: each example has its own page with a **Run** button.
 
 1. [Creating a promise](#1-creating-a-promise)
 2. [Chaining](#2-chaining)
